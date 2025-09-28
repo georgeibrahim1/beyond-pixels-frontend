@@ -8,6 +8,7 @@ export default function App() {
         {/*Home*/}
         {/*Explore*/}
         {/*Game*/}
+        {/*Rank*/}
         {/*Story*/}
         {/*About*/}
         {/*Not Found*/}
