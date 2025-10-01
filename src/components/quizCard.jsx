@@ -1,32 +1,70 @@
 import React, { useState } from 'react'
 
-export default function QuizCard({quizObj , setScore , rank}) {
-    const [trueAnswer , setTrueAnswer] = useState(false);
-    const [wrongAnswer , setWrongAnswer] = useState(false);
+export default function QuizCard({quizObj , setUserStates , setLastAnsweredState, setCurrentQuizNumber }) {
+
+    const [selectedChoice,setSelectedChoice] = useState([]);
+    const [isAnswered,setIsAnswered] = useState(false);
 
     const handleChoiceClick = (choice) => {
-        if(choice === quizObj.Answer) {
-            setTrueAnswer(true);
-            setScore(prev => prev + 1)
-        } else {
-            setWrongAnswer(true);
-            if(rank !== "beginner")
-                setScore(prev => prev - 1)
+        setIsAnswered(true);
+        setSelectedChoice(choice);
 
-        }
+        setUserStates(prev => {
+            return {...prev, score: prev.score + choice[1]};
+        })
+
+        setLastAnsweredState({score: choice[1]});
     };
-    
-    // TODO: add another elements with different styles based on wrong or correct states
+
+    // TODO: Add Styles BASED ON SCORE OF QUIZ
+    const getButtonStyle = (choice) => {
+
+        // no answer style
+        if(!isAnswered) {
+            return "" ;
+        }
+
+        // answered style -> selected choice
+        if(selectedChoice[0] === choice[0]) {
+            if(choice[1] == 5) {
+                return "";
+            }
+        }
+
+        // not selected
+        if(choice[1] == 5) {
+                return "";
+            }
+    };
+
+    const handleNextClick = () => {
+        setCurrentQuizNumber(prev => {
+            if(prev == 85) {
+                return 99999; // end of questions
+            }
+
+            return prev + 1;
+        });
+    }
+
+
     return (
-    <div>
         <div>
-            {quizObj.Question}
+            <div>
+                {quizObj.question}
+            </div>
+            <div>
+            {
+                quizObj.choices.forEach((choice) => {
+                    return <button className={`${getButtonStyle}`} onClick={()=> {handleChoiceClick(choice)}}>
+                        {choice[0]}
+                    </button>
+                })
+            }
+            </div>
+            <div> {isAnswered && 
+                <button onClick={handleNextClick}> Next Button </button> }
+            </div>
         </div>
-        <div>
-        {quizObj.choices.map((choice) => {
-            <button key={choice} onClick={()=> handleChoiceClick(choice)}> </button>
-        })}
-        </div>
-    </div>
-  )
+    );
 }
