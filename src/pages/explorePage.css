@@ -1,0 +1,40 @@
+/* ExplorePage.css */
+
+/* Map Container */
+.leaflet-container {
+  width: 80%;
+  height: 450px; /* adjust height */
+  border-radius: 16px;
+  background: var(--color-background-dark);
+  border: 1px solid rgba(127, 76, 255, 0.2);
+  box-shadow: var(--shadow-soft-glow);
+  font-family: var(--font-body);
+  position: relative;
+  overflow: hidden;
+  margin: auto;
+  margin-top: 50px;
+}
+
+/* Dark tile overlay (spacey feel) */
+.leaflet-tile {
+  filter: brightness(0.6) contrast(1.2) saturate(0.8);
+}
+
+/* Popup */
+.leaflet-popup-content-wrapper {
+  background: rgba(10, 10, 26, 0.9);
+  color: var(--color-text-primary);
+  border-radius: 12px;
+  border: 1px solid rgba(127, 76, 255, 0.4);
+  box-shadow: var(--shadow-glow);
+}
+
+.leaflet-popup-tip {
+  background: rgba(10, 10, 26, 0.9);
+  border: 1px solid rgba(127, 76, 255, 0.3);
+}
+
+/* Marker Glow Effect */
+.leaflet-marker-icon {
+  filter: drop-shadow(0 0 8px rgba(127, 76, 255, 0.7));
+}

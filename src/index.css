@@ -1,1 +1,224 @@
-@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap');
+
+/* CSS Variables for Design System */
+:root {
+  /* Colors */
+  --color-primary: #7F4CFF;
+  --color-secondary: #FFFFFF;
+  --color-background-dark: #0A0A1A;
+  --color-text-primary: #FFFFFF;
+  --color-text-secondary: #B0B0C0;
+  --color-brand: #7F4CFF;
+  --color-brand-light: #A78BFA;
+  --color-brand-dark: #5A1BFF;
+  
+  /* Gradients */
+  --gradient-primary: linear-gradient(135deg, #7F4CFF 0%, #5A1BFF 100%);
+  --gradient-text: linear-gradient(135deg, #7F4CFF 0%, #A78BFA 100%);
+  
+  /* Shadows */
+  --shadow-glow: 0 0 20px rgba(127, 76, 255, 0.4);
+  --shadow-glow-strong: 0 0 30px rgba(127, 76, 255, 0.6);
+  --shadow-soft-glow: 0 4px 20px rgba(127, 76, 255, 0.3);
+  
+  /* Typography */
+  --font-heading: 'Inter', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+  
+  /* Font Sizes */
+  --text-hero: 3rem;
+  --text-hero-lg: 4rem;
+  --text-hero-xl: 5rem;
+  --text-subhero: 1.75rem;
+  
+  /* Spacing */
+  --border-radius-pill: 50px;
+  
+  /* Transitions */
+  --transition-default: all 0.3s ease;
+}
+
+/* Reset and Base Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--color-background-dark);
+  color: var(--color-text-primary);
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+/* Space Background with Animated Stars */
+.space-background {
+  position: relative;
+  background: radial-gradient(ellipse at center, #1a1a2e 0%, #0a0a1a 100%);
+  overflow: hidden;
+}
+
+.space-background::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    radial-gradient(2px 2px at 20px 30px, #fff, transparent),
+    radial-gradient(2px 2px at 40px 70px, rgba(255,255,255,0.8), transparent),
+    radial-gradient(1px 1px at 90px 40px, #fff, transparent),
+    radial-gradient(1px 1px at 130px 80px, rgba(255,255,255,0.6), transparent),
+    radial-gradient(2px 2px at 160px 30px, #fff, transparent);
+  background-repeat: repeat;
+  background-size: 200px 100px;
+  animation: twinkle 4s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+
+/* Hero Section */
+.hero-section {
+  min-height: 100vh;
+  background: linear-gradient(
+    135deg,
+    rgba(10, 10, 26, 0.9) 0%,
+    rgba(26, 26, 46, 0.8) 50%,
+    rgba(10, 10, 26, 0.95) 100%
+  ),
+  url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><defs><radialGradient id="star" cx="50%" cy="50%"><stop offset="0%" stop-color="white" stop-opacity="1"/><stop offset="100%" stop-color="white" stop-opacity="0"/></radialGradient></defs><circle cx="100" cy="100" r="1" fill="url(%23star)"/><circle cx="300" cy="200" r="0.5" fill="url(%23star)"/><circle cx="500" cy="150" r="1" fill="url(%23star)"/><circle cx="700" cy="300" r="0.5" fill="url(%23star)"/><circle cx="200" cy="400" r="1" fill="url(%23star)"/><circle cx="800" cy="450" r="0.5" fill="url(%23star)"/><circle cx="400" cy="600" r="1" fill="url(%23star)"/><circle cx="600" cy="700" r="0.5" fill="url(%23star)"/><circle cx="150" cy="800" r="1" fill="url(%23star)"/><circle cx="900" cy="150" r="0.5" fill="url(%23star)"/></svg>');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+/* Cinematic Overlay */
+.cinematic-overlay {
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.7) 0%,
+    rgba(10, 10, 26, 0.8) 50%,
+    rgba(0, 0, 0, 0.9) 100%
+  );
+}
+
+/* Gradient Text */
+.gradient-text {
+  background: var(--gradient-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Content Box for Immersive Sections */
+.content-box {
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(127, 76, 255, 0.2);
+}
+
+/* Utility Classes */
+.text-shadow {
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.text-glow {
+  text-shadow: 0 0 10px rgba(127, 76, 255, 0.5);
+}
+
+/* Animations */
+@keyframes twinkle {
+  0% { opacity: 0.3; }
+  100% { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes glowPulse {
+  0% {
+    box-shadow: var(--shadow-glow);
+  }
+  100% {
+    box-shadow: var(--shadow-glow-strong);
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.animate-glow-pulse {
+  animation: glowPulse 2s ease-in-out infinite alternate;
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-twinkle {
+  animation: twinkle 4s ease-in-out infinite alternate;
+}
+
+/* Animation Delays */
+.delay-100 { animation-delay: 0.1s; }
+.delay-200 { animation-delay: 0.2s; }
+.delay-300 { animation-delay: 0.3s; }
+.delay-500 { animation-delay: 0.5s; }
+.delay-1000 { animation-delay: 1s; }
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-background-dark);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--gradient-primary);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #8F5CFF 0%, #6A2BFF 100%);
+}
+
+/* Responsive Typography */
+@media (max-width: 768px) {
+  :root {
+    --text-hero: 2.5rem;
+    --text-hero-lg: 3rem;
+    --text-hero-xl: 3.5rem;
+    --text-subhero: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --text-hero: 2rem;
+    --text-hero-lg: 2.5rem;
+    --text-hero-xl: 3rem;
+    --text-subhero: 1.25rem;
+  }
+}

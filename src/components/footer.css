@@ -1,0 +1,60 @@
+/* Footer Component Styles */
+.footer {
+  position: relative;
+  border-top: 1px solid rgba(127, 76, 255, 0.2);
+  background: rgba(10, 10, 26, 0.8);
+  backdrop-filter: blur(20px);
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+.footer-content {
+  text-align: center;
+}
+
+.footer-brand {
+  margin-bottom: 1rem;
+}
+
+.footer-brand-text {
+  background: var(--gradient-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.125rem;
+}
+
+.footer-copyright {
+  color: var(--color-text-secondary);
+  font-size: 0.875rem;
+  transition: var(--transition-default);
+  margin-bottom: 1rem;
+}
+
+.footer-copyright:hover {
+  color: var(--color-text-primary);
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.footer-link {
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  font-size: 0.875rem;
+  transition: var(--transition-default);
+}
+
+.footer-link:hover {
+  color: var(--color-primary);
+}
+
