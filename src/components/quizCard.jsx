@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import './quizCard.css'
 
 export default function QuizCard({quizObj , setUserStates , setLastAnsweredState, setCurrentQuizNumber }) {
 
@@ -6,6 +7,8 @@ export default function QuizCard({quizObj , setUserStates , setLastAnsweredState
     const [isAnswered,setIsAnswered] = useState(false);
 
     const handleChoiceClick = (choice) => {
+        if (isAnswered) return;
+        
         setIsAnswered(true);
         setSelectedChoice(choice);
 
@@ -16,25 +19,32 @@ export default function QuizCard({quizObj , setUserStates , setLastAnsweredState
         setLastAnsweredState({score: choice[1]});
     };
 
-    // TODO: Add Styles BASED ON SCORE OF QUIZ
     const getButtonStyle = (choice) => {
+        let classes = 'quiz-choice-button';
 
-        // no answer style
-        if(!isAnswered) {
-            return "" ;
+        if (!isAnswered) {
+            return classes;
         }
 
-        // answered style -> selected choice
-        if(selectedChoice[0] === choice[0]) {
-            if(choice[1] == 5) {
-                return "";
+        // Selected choice
+        if (selectedChoice[0] === choice[0]) {
+            classes += ' selected';
+            if (choice[1] === 5) {
+                classes += ' correct';
+            } else if(choice[1] >= 1 && choice[1] < 5) {
+                classes += ' good';
+            } else {
+                classes += ' incorrect';
+            }
+        } else {
+            // Not selected choices
+            classes += ' not-selected';
+            if (choice[1] === 5) {
+                classes += ' correct';
             }
         }
 
-        // not selected
-        if(choice[1] == 5) {
-                return "";
-            }
+        return classes;
     };
 
     const handleNextClick = () => {
@@ -45,25 +55,36 @@ export default function QuizCard({quizObj , setUserStates , setLastAnsweredState
 
             return prev + 1;
         });
+
+        setIsAnswered(false);
+        setSelectedChoice([]);
     }
 
-
     return (
-        <div>
-            <div>
+        <div className="quiz-card">
+            <div className="quiz-question">
                 {quizObj.question}
             </div>
-            <div>
-            {
-                quizObj.choices.forEach((choice) => {
-                    return <button className={`${getButtonStyle}`} onClick={()=> {handleChoiceClick(choice)}}>
+            
+            <div className="quiz-choices">
+                {quizObj.choices.map((choice, index) => (
+                    <button 
+                        key={index}
+                        className={getButtonStyle(choice)} 
+                        onClick={() => handleChoiceClick(choice)}
+                        disabled={isAnswered}
+                    >
                         {choice[0]}
                     </button>
-                })
-            }
+                ))}
             </div>
-            <div> {isAnswered && 
-                <button onClick={handleNextClick}> Next Button </button> }
+            
+            <div className="quiz-next-section">
+                {isAnswered && 
+                    <button className="quiz-next-button" onClick={handleNextClick}>
+                        Next Question
+                    </button>
+                }
             </div>
         </div>
     );
