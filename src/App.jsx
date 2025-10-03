@@ -5,9 +5,9 @@ import { Route , Routes} from 'react-router'
 import HomePage from './pages/homePage'
 import ExplorePage from './pages/explorePage'
 import GamePage from './pages/gamePage'
-import StoryPage from './pages/storyPage'
 import AboutPage from './pages/aboutPage'
 import ErrorPage from './pages/errorPage'
+import Ribbons from './components/Ribbons';
 
 export default function App() {
   return (
@@ -16,7 +16,6 @@ export default function App() {
         <Route index element={<HomePage/>}/>
         <Route path="explore" element={<ExplorePage/>}/>
         <Route path="game" element={<GamePage/>}/>
-        <Route path="story" element={<StoryPage/>}/>
         <Route path="about" element={<AboutPage/>}/>
         <Route path="*" element={<ErrorPage/>}/>
       </Route>
