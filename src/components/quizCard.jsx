@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import './quizCard.css'
 
-export default function QuizCard({quizObj , setUserStates , setLastAnsweredState, setCurrentQuizNumber }) {
+export default function QuizCard({quizObj , setUserStates, setCurrentQuizNumber }) {
 
     const [selectedChoice,setSelectedChoice] = useState([]);
     const [isAnswered,setIsAnswered] = useState(false);
@@ -16,7 +16,6 @@ export default function QuizCard({quizObj , setUserStates , setLastAnsweredState
             return {...prev, score: prev.score + choice[1]};
         })
 
-        setLastAnsweredState({score: choice[1]});
     };
 
     const getButtonStyle = (choice) => {

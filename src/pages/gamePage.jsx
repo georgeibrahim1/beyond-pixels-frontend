@@ -1,35 +1,34 @@
-import React, { useReducer, useState } from 'react'
+import React, { useEffect, useReducer, useState } from 'react'
 import { QuizzesData } from '../features/game/data/quizzes';
 import QuizCard from '../components/quizCard';
 import EditUserForm from '../components/editUserForm';
-import { useNavigate } from 'react-router';
 import './gamePage.css';
 import '../components/buttons.css';
 
 export default function GamePage() {
 
-    const navigate = useNavigate();
+    const [userStates, setUserStates] = useState(() => {
+        const storedUser = localStorage.getItem("user");
+        return storedUser
+            ? JSON.parse(storedUser)
+            : { userName: "Player", userIcon: "🐍", score: 0 };
+    });
 
-    const [userStates,setUserStates] = useState({
-        userName: "Player",
-        userIcon: "🐍",
-        score: 0,
-    }); // TODO: add it to local storage
+    const [currentQuizNumber, setCurrentQuizNumber] = useState(() => {
+        const storedCurrentQuizNumber = localStorage.getItem("currentQuizNumber");
+        return storedCurrentQuizNumber ? JSON.parse(storedCurrentQuizNumber) : 1;
+    });
 
-    function lastAnsweredStateReducer(state,action) {
-        if(action.score == 5) {
-            return {mood: "happy"};
-        } else if(1 <= action.score < 5 ) {
-            return {mood: "good"};
-        } else {
-            return {mood: "sad"};
-        }
-    }
+    useEffect(() => {
+        localStorage.setItem("user", JSON.stringify(userStates));
+    }, [userStates]);
 
-    // TODO: add it to local storage
-    const [lastAnsweredState, setLastAnsweredState] = useReducer(lastAnsweredStateReducer, {mood: "happy"}); // setLastAnsweredState({score: #})
+    useEffect(() => {
+        localStorage.setItem("currentQuizNumber", currentQuizNumber.toString());
+    }, [currentQuizNumber]);
 
-    const [currentQuizNumber,setCurrentQuizNumber] = useState(99999); // TODO: add it to local storage
+    
+
     const [showEditForm, setShowEditForm] = useState(false);
 
     const handleEditUser = () => {
@@ -101,7 +100,6 @@ export default function GamePage() {
                         quizObj={QuizzesData[currentQuizNumber-1]} 
                         setUserStates={setUserStates} 
                         setCurrentQuizNumber={setCurrentQuizNumber} 
-                        setLastAnsweredState={setLastAnsweredState}
                     />
                 </div>
 
