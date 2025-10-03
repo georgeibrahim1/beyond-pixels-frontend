@@ -7,7 +7,6 @@ import ExplorePage from './pages/explorePage'
 import GamePage from './pages/gamePage'
 import AboutPage from './pages/aboutPage'
 import ErrorPage from './pages/errorPage'
-import Ribbons from './components/Ribbons';
 
 export default function App() {
   return (

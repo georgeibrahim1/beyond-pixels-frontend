@@ -402,3 +402,22 @@
   line-height: 1.6;
 }
 
+.bg-z {
+  position: absolute;   /* takes it out of the flex/grid flow */
+  z-index: 0;           /* behind content */
+  opacity: 0.5;         /* adjust transparency */
+  pointer-events: none; /* so it won't block clicks */
+}
+
+.x {
+  top: 300px;
+  right: 140px;
+}
+
+.f {
+  top: 30px;
+  left: 160px;
+  width: 10rem;
+  height: 10rem;
+}
+

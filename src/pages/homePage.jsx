@@ -10,6 +10,30 @@ export default function HomePage() {
   return (
     <div className="homepage">
       <section className="hero hero-section">
+            <div className="visual-element bg-z x">
+              <div className="orb-container">
+                <div className="orb-layer orb-layer-1" />
+                <div className="orb-layer orb-layer-2" />
+                <div className="orb-layer orb-layer-3" />
+                <div className="orb-core" />
+                
+                <div className="orbiting-element orbiting-element-1" />
+                <div className="orbiting-element orbiting-element-2" />
+                <div className="orbiting-element orbiting-element-3" />
+              </div>
+            </div>
+            <div className="visual-element bg-z f">
+              <div className="orb-container">
+                <div className="orb-layer orb-layer-1" />
+                <div className="orb-layer orb-layer-2" />
+                <div className="orb-layer orb-layer-3" />
+                <div className="orb-core" />
+                
+                <div className="orbiting-element orbiting-element-1" />
+                <div className="orbiting-element orbiting-element-2" />
+                <div className="orbiting-element orbiting-element-3" />
+              </div>
+            </div>
         <div className="hero-overlay cinematic-overlay" />
         
         <div className="hero-content">
