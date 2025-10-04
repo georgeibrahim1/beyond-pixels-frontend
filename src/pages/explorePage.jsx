@@ -2,7 +2,7 @@ import React , {useEffect , useRef, useState} from "react";
 import { MapContainer, TileLayer, useMapEvents , Marker, Popup , Tooltip} from "react-leaflet";
 import L from "leaflet"; 
 import "leaflet/dist/leaflet.css";
-import "./ExplorePage.css";
+import "./explorePage.css";
 import ThreeDComponent from "../components/threeModel";
 import PlanetButton from "../components/planetButton";
 import StoryPopup from "../components/storyPopup";
