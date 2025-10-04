@@ -56,7 +56,7 @@ export default function ExplorePage() {
       <div className="explore-content">
         <div className="map-wrapper content-box animate-fade-in-up delay-300">
           <MapContainer
-            center={[0, 0]}
+            center={[65,-65]}
             zoom={map.zoomRange[0]}
             minZoom={map.zoomRange[0]}
             maxZoom={map.zoomRange[1]}

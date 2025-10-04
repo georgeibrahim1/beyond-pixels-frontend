@@ -9,6 +9,7 @@ export const maps = [
     tms: false,
     modelUrl: "/moon2.glb",
     size: 0.34,
+    center: [0,0],
     stroies: [
       {
         coordinates: [12.34, 56.78],
@@ -30,6 +31,7 @@ export const maps = [
     tms: false,
     modelUrl: "/soil.glb",
     size: 0.35,
+    center: [0,0],
     stroies: [
       {
         coordinates: [34.56, -123.45],
@@ -51,6 +53,7 @@ export const maps = [
     tms: false,
     modelUrl: "/models copy/scene.gltf",
     size:1.8,
+    center: [0,0],
     stroies: [
       {
         coordinates: [-12.34, 98.76],
@@ -67,14 +70,15 @@ export const maps = [
     btitle: "Mars",
     bdescription: "Explore the rover landing site",
     url: "https://test.cu-portal.com/mars/tiles/{z}/{x}/{y}.png",
-    bounds: [[-56, -180],[84, 180]],
-    zoomRange: [2,6],
+    bounds: [[-90, -180],[90, 180]],
+    zoomRange: [3,6],
     tms: false,
     modelUrl: "/mars2.glb",
     size: 0.55,
+    center: [90,90],
     stroies: [
       {
-        coordinates: [10, 20],
+        coordinates: [90, 90],
         markerTitle: "Mars Rover Site",
         sound: "/stories/data/Gale Crater – The Mountain of Time.mp3",
         title: "Gale Crater - The Mountain of Time",
@@ -89,10 +93,11 @@ export const maps = [
     bdescription: "Observe active sunspot regions",
     url: "https://test.cu-portal.com/earth_new/tiles/{z}/{x}/{y}.png",
     bounds: [[-90, -180],[90, 180]],
-    zoomRange: [3,6],
+    zoomRange: [4,7],
     tms: false,
     modelUrl: "/models/scene.gltf",
     size: 2,
+    center: [-80,80],
     stroies: [
       {
         coordinates: [80, -80],
