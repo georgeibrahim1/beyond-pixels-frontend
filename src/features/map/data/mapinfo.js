@@ -13,9 +13,9 @@ export const maps = [
       {
         coordinates: [12.34, 56.78],
         markerTitle: "Apollo 13 Successful Failure (1970)",
-        sound: "src/features/stories/data/appollo.mp3",
+        sound: "/features/stories/data/appollo.mp3",
         title: "Apollo 13 — The ‘Successful Failure",
-        photo: "src/features/stories/data/appollo.png",
+        photo: "/features/stories/data/appollo.png",
         content: "First human landing site on the moon."
       }
     ]
@@ -34,9 +34,9 @@ export const maps = [
       {
         coordinates: [34.56, -123.45],
         markerTitle: "Soil Sample Area",
-        sound: "src/features/stories/data/soil.mp3",
+        sound: "/features/stories/data/soil.mp3",
         title: "Fertile Soil",
-        photo: "src/features/stories/data/Jezero Crater - The River Delta of Pr.png",
+        photo: "/features/stories/data/Jezero Crater - The River Delta of Pr.png",
         content: "This area has rich agricultural soil."
       }
     ]
@@ -55,9 +55,9 @@ export const maps = [
       {
         coordinates: [-12.34, 98.76],
         markerTitle: "Global Forest Site",
-        sound: "src/features/stories/data/Valles Marineris — The Grand Canyon.mp3",
+        sound: "/features/stories/data/Valles Marineris — The Grand Canyon.mp3",
         title: "Rainforest Zone",
-        photo: "src/features/stories/data/Valles Marineris - The Grand Canyon.png",
+        photo: "/features/stories/data/Valles Marineris - The Grand Canyon.png",
         content: "Dense rainforest region with diverse wildlife."
       }
     ]
@@ -76,9 +76,9 @@ export const maps = [
       {
         coordinates: [10, 20],
         markerTitle: "Mars Rover Site",
-        sound: "src/features/stories/data/Gale Crater – The Mountain of Time.mp3",
+        sound: "/features/stories/data/Gale Crater – The Mountain of Time.mp3",
         title: "Gale Crater - The Mountain of Time",
-        photo: "src/features/stories/data/Gale Crater - The Mountain of Time.png",
+        photo: "/features/stories/data/Gale Crater - The Mountain of Time.png",
         content: "Site explored by Mars rover."
       }
     ]
@@ -97,9 +97,9 @@ export const maps = [
       {
         coordinates: [80, -80],
         markerTitle: "Birth Of Earth",
-        sound: "src/features/stories/data/1. Birth of Earth.mp3",
+        sound: "/features/stories/data/1. Birth of Earth.mp3",
         title: "Sunspot Area",
-        photo: "src/features/stories/data/Birth of the Himalayas.png",
+        photo: "/features/stories/data/Birth of the Himalayas.png",
         content: "Active sunspot region observed by telescope."
       }
     ]
