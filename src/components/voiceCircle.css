@@ -1,0 +1,14 @@
+.voice-audio-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.voice-audio-circle {
+  width: 80px;
+  height: 80px;
+  border-radius: 100%;
+  background: radial-gradient(circle, #7a2ac9, #3e0249);
+  transition: transform 1s linear;
+  margin-bottom: 10px;
+}

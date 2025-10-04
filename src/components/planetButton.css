@@ -1,0 +1,120 @@
+.planet-button {
+  background: var(--gradient-primary);
+  border: none;
+  border-radius: 20px;
+  padding: 20px 24px;
+  cursor: pointer;
+  transition: var(--transition-default);
+  box-shadow: var(--shadow-soft-glow);
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  font-family: var(--font-body);
+}
+
+.planet-button:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-glow);
+}
+
+.planet-button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 10px rgba(127, 76, 255, 0.3); /* softer brand shadow */
+}
+
+.planet-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.08) 0%,
+    transparent 100%
+  );
+  pointer-events: none;
+}
+
+.planet-button-content {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 16px;
+  position: relative;
+  z-index: 1;
+}
+
+.planet-button-text {
+  text-align: left;
+  flex: 1;
+}
+
+.planet-button-title {
+  margin: 0;
+  color: var(--color-text-primary);
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.2;
+  margin-bottom: 4px;
+}
+
+.planet-button-description {
+  margin: 0;
+  color: var(--color-text-secondary);
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.planet-button-icon {
+  width: 80px;
+  height: 80px;
+  border-radius: 100%;
+  background: rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.planet-emoji {
+  font-size: 32px;
+  line-height: 1;
+  animation: rotate 20s linear infinite;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .planet-button {
+    padding: 16px 20px;
+  }
+  
+  .planet-button-title {
+    font-size: 16px;
+  }
+  
+  .planet-button-description {
+    font-size: 12px;
+  }
+  
+  .planet-button-icon {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .planet-emoji {
+    font-size: 28px;
+  }
+}

@@ -1,19 +1,6 @@
 /* ExplorePage.css */
 
 /* Map Container */
-.leaflet-container {
-  width: 80%;
-  height: 450px; /* adjust height */
-  border-radius: 16px;
-  background: var(--color-background-dark);
-  border: 1px solid rgba(127, 76, 255, 0.2);
-  box-shadow: var(--shadow-soft-glow);
-  font-family: var(--font-body);
-  position: relative;
-  overflow: hidden;
-  margin: auto;
-  margin-top: 50px;
-}
 
 /* Dark tile overlay (spacey feel) */
 .leaflet-tile {
@@ -38,3 +25,200 @@
 .leaflet-marker-icon {
   filter: drop-shadow(0 0 8px rgba(127, 76, 255, 0.7));
 }
+
+/* Leaflet Marker Custom Styles */
+.leaflet-marker-icon.story-marker {
+  background-color: var(--color-brand);
+  border-radius: 100%;
+  width: 100px;   /* increased size */
+  height: 100px;  /* increased size */
+  border: 3px solid var(--color-primary); /* thicker border */
+  box-shadow: var(--shadow-glow);
+  animation: glowPulse 2s ease-in-out infinite alternate;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.leaflet-marker-icon.story-marker:hover {
+  transform: scale(2); /* slightly bigger on hover */
+  box-shadow: var(--shadow-glow-strong);
+}
+
+/* Leaflet Tooltip Custom Styles */
+.leaflet-tooltip.story-tooltip {
+  background: rgba(0,0,0,0.85);
+  color: var(--color-text-primary);
+  font-family: var(--font-body);
+  font-weight: 600;
+  border: 1px solid var(--color-brand-light);
+  border-radius: 12px;
+  padding: 8px 12px;
+  box-shadow: var(--shadow-soft-glow);
+  text-align: center;
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.leaflet-tooltip.story-tooltip.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Optional: Add subtle pulse animation to tooltip text */
+.leaflet-tooltip.story-tooltip span {
+  display: inline-block;
+  animation: glowPulse 2s ease-in-out infinite alternate;
+}
+
+
+.explore-page {
+  padding: 4rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.explore-header {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.explore-title {
+  font-size: var(--text-hero);
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.explore-description {
+  font-size: 1.125rem;
+  color: var(--color-text-secondary);
+  max-width: 650px;
+  margin: 0 auto;
+}
+
+.explore-content {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2rem;
+}
+
+.map-wrapper {
+  height: 70vh;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: var(--shadow-soft-glow);
+}
+
+.map-wrapper .leaflet-container {
+  height: 100%;
+  width: 100%;
+}
+
+.button-panel {
+  padding: 1.5rem;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: stretch;
+  justify-content: flex-start;
+}
+
+.panel-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--color-brand-light);
+}
+
+.map-button {
+  padding: 0.75rem 1rem;
+  border-radius: var(--border-radius-pill);
+  border: 1px solid rgba(127, 76, 255, 0.4);
+  background: transparent;
+  color: var(--color-text-primary);
+  font-weight: 600;
+  transition: var(--transition-default);
+  cursor: pointer;
+}
+
+.map-button:hover {
+  background: var(--gradient-primary);
+  color: #fff;
+  box-shadow: var(--shadow-glow);
+}
+
+@media (max-width: 1024px) {
+  .explore-content {
+    grid-template-columns: 1fr;
+  }
+
+  .button-panel {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .map-button {
+    flex: 1 1 calc(50% - 0.5rem);
+  }
+}
+
+@media (max-width: 768px) {
+  .explore-title {
+    font-size: var(--text-hero-lg);
+  }
+
+  .explore-description {
+    font-size: 1rem;
+  }
+}
+
+.planets-list {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.map-filter-bar {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  padding: 10px 24px;
+  border-radius: var(--border-radius-pill);
+  border: 1px solid rgba(127, 76, 255, 0.4);
+  background: rgba(10, 10, 26, 0.6);
+  color: var(--color-text-primary);
+  font-weight: 600;
+  font-family: var(--font-heading);
+  cursor: pointer;
+  transition: var(--transition-default);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: var(--shadow-soft-glow);
+}
+
+.filter-btn:hover {
+  background: rgba(127, 76, 255, 0.15);
+  box-shadow: var(--shadow-glow);
+  transform: translateY(-2px);
+}
+
+.filter-btn.active {
+  background: var(--gradient-primary);
+  color: var(--color-text-secondary);
+  box-shadow: var(--shadow-glow-strong);
+  transform: translateY(-2px);
+}
+
+
+

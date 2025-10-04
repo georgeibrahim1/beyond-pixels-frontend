@@ -7,7 +7,7 @@ export default function Footer() {
       <div className="footer-container">
         <div className="footer-content">
           <div className="footer-brand">
-            <span className="footer-brand-text">⚜️ Beyond Pixels </span>
+            👾 <span className="footer-brand-text"> Beyond Pixels </span>
           </div>
           <p className="footer-copyright">
             © {new Date().getFullYear()} Beyond Pixels. All Rights Reserved.
