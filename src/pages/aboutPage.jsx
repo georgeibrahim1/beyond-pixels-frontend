@@ -1,5 +1,5 @@
 import React from 'react'
-import './AboutPage.css'
+import './aboutPage.css'
 
 export default function AboutPage() {
 return ( <section className="about-page space-background"> <div className="cinematic-overlay"> <div className="about-container">
