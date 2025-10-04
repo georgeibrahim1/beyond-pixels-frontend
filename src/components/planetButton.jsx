@@ -1,5 +1,5 @@
 import React from 'react';
-import './PlanetButton.css';
+import './planetButton.css';
 import ThreeDComponent from "./threeModel";
 
 export default function PlanetButton({ 
