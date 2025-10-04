@@ -76,7 +76,7 @@ export const maps = [
       {
         coordinates: [10, 20],
         markerTitle: "Mars Rover Site",
-        sound: "src/features/stories/data/Gale Crater - The Mountain of Time.mp3",
+        sound: "src/features/stories/data/Gale Crater – The Mountain of Time.mp3",
         title: "Gale Crater - The Mountain of Time",
         photo: "src/features/stories/data/Gale Crater - The Mountain of Time.png",
         content: "Site explored by Mars rover."
