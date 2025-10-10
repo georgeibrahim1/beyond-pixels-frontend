@@ -52,6 +52,14 @@ return ( <section className="about-page space-background"> <div className="cinem
        <h2>
         <span>👩‍🚀</span>
         <span className="gradient-text"> Team</span>
+        <ul className="about-list">
+          <li>Haneen Abukhater</li>
+          <li>George Ibrahim</li>
+          <li>Karim El-Sayed</li>
+          <li>Mazen Mohsen</li>
+          <li>Sohila Emad</li>
+          <li>Salma Ashraf</li>
+        </ul>
       </h2>
 
       </div>
